@@ -1,1 +1,201 @@
-index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fbc2eb);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+/* Password Wall Styles */
+.pass-box{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 0 20px rgba(0,0,0,0.2);
+}
+
+.pass-box input{
+    padding:10px;
+    width:220px;
+    margin:15px;
+    border-radius:10px;
+    border:1px solid gray;
+    text-align:center;
+}
+
+/* Birthday Content Styles */
+.container{
+    width:90%;
+    max-width:700px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 0 20px rgba(0,0,0,0.3);
+    text-align:center;
+}
+
+h1{
+    color:#ff0066;
+    font-size:35px;
+    margin-bottom:30px;
+}
+
+.box{
+    margin-top:25px;
+    padding:20px;
+    border:2px solid #ff0066;
+    border-radius:15px;
+}
+
+input{
+    width:80%;
+    padding:12px;
+    font-size:18px;
+    margin:15px 0;
+    border-radius:10px;
+    border:1px solid gray;
+    text-align:center;
+}
+
+button{
+    padding:12px 30px;
+    background:#ff0066;
+    color:white;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+button:hover{
+    background:#d60057;
+}
+
+.hidden{
+    display:none !important;
+}
+
+.message{
+    margin-top:20px;
+    font-size:24px;
+    color:green;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div id="passwordScreen" class="pass-box">
+    <h2>🔒 Enter Password</h2>
+    <input type="password" id="password" placeholder="Password">
+    <br>
+    <button onclick="checkPassword()">Open Website</button>
+</div>
+
+<div id="birthdayContent" class="container hidden">
+
+    <h1>🎂 HAPPY BIRTHDAY 🎈<br> to you dear <br><b><u>ANDALEEB ZAHRA</u></b></h1>
+    <img src ="webdeveloperpics.jpeg" width =200>
+
+    <div id="section1" class="box">
+        <h2> OPEN LOCK 🔓🔓</h2>
+        <p>Enter Your Previous Age</p>
+        <input type="Enter Your Age" id="lock1" placeholder="Enter your age">
+        <br>
+        <button onclick="unlock1()">Unlock</button>
+    </div>
+
+    <div id="section2" class="hidden">
+        <img src="flowerr.jpeg" width =200>
+        <p class="message">
+            Alhamdulillah for the previous year ❤️<br><br>
+            InshaAllah for good coming year 🌸
+        </p>
+
+        <h2 style="margin-top:25px;">✨ New Chapter Started ✨</h2>
+
+        <div class="box">
+            <h2>🔒 LOCK DOWN 🔒</h2>
+            <p>Enter Your New Age</p>
+            <input type="Enter Your Age" id="lock2" placeholder="Enter your age">
+            <br>
+            <button onclick="unlock2()">lock</button>
+        </div>
+    </div>
+
+    <div id="finalMessage" class="hidden">
+        <h2 style="color:#ff0066;margin-top:30px;">
+            🎉 Congratulations 🎉
+        </h2>
+        <img src="happybirthday.jfif"  width="150">
+        <p class="message">
+            <u>Happy Birthday to you my dear! 🎂🎈</u><br><br>
+            May Allah bless you with happiness,<br>
+            good health, success,<br>
+            and a beautiful future.<br><br>
+            Have a wonderful birthday! ❤️
+        </p>
+        <p>-------------------------------------------------------------------------------------------------------------</p>
+    </div>
+
+</div>
+
+<script>
+// Function for the initial gateway password
+function checkPassword(){
+    let pass = document.getElementById("password").value;
+    if(pass == "1111"){
+        // Hide password wall and show birthday content
+        document.getElementById("passwordScreen").classList.add("hidden");
+        document.getElementById("birthdayContent").classList.remove("hidden");
+    } else {
+        alert("Wrong Password!");
+    }
+}
+
+// Function for Lock Down (Previous Year)
+function unlock1(){
+    let code = document.getElementById("lock1").value;
+    if(code == "17"){
+        // Hide the section 1 lock box
+       // document.getElementById("section1").classList.add("hidden");
+        // Show section 2
+        document.getElementById("section2").classList.remove("hidden");
+    } else {
+        alert("Wrong Previous Year!");
+    }
+}
+
+// Function for Lock Up (New Year)
+function unlock2(){
+    let code = document.getElementById("lock2").value;
+    if(code == "18"){
+        // Hide section 2
+       // document.getElementById("section2").classList.add("hidden");
+        // Show final celebratory message
+        document.getElementById("finalMessage").classList.remove("hidden");
+    } else {
+        alert("Wrong New Year!");
+    }
+}
+</script>
+
+</body>
+</html>
